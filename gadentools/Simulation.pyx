@@ -160,6 +160,7 @@ cdef class Simulation:
             Vector3 location
             bool blockObstacles
         """
+        self.__readFile(iteration) #if it's the current iteration it doesn't do anything
         cdef numpy.ndarray[object, ndim=2] wind_map = numpy.zeros((self.number_of_cells_x, self.number_of_cells_y), object)
         cdef int k = int( (height-self.env_min.z) / self.cell_size )
 
